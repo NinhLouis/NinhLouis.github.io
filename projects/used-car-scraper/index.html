@@ -2,12 +2,97 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Used Car Price Scraper</title>
+  <title>European Used Car Price Scraper</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      line-height: 1.6;
+      max-width: 900px;
+      margin: auto;
+      padding: 40px;
+    }
+    h1, h2 {
+      color: #333;
+    }
+    code {
+      background: #f4f4f4;
+      padding: 2px 6px;
+      border-radius: 4px;
+      font-family: monospace;
+    }
+    .back-link {
+      margin-top: 2em;
+      display: inline-block;
+    }
+    table {
+      border-collapse: collapse;
+      width: 100%;
+      margin-top: 1em;
+    }
+    table, th, td {
+      border: 1px solid #ccc;
+      padding: 8px;
+    }
+    th {
+      background-color: #eee;
+    }
+  </style>
 </head>
 <body>
-  <h1>Used Car Price Scraper</h1>
-  <p>This project scrapes used car data from AutoScout24 across Europe to analyze B2C pricing trends and compare them with B2B internal data.</p>
+  <h1>🚗 European Used Car Price Scraper</h1>
 
-  <p><a href="/">← Back to Portfolio</a></p>
+  <h2>Context & Problem</h2>
+  <p>
+    As a data analyst working with <strong>B2B used car transaction data</strong>, I realized we lacked visibility into the <strong>B2C side of the market</strong>.
+    Understanding consumer-facing price trends across European countries could bridge that gap — and help explain price dynamics in wholesale auctions.
+  </p>
+
+  <h2>Solution & Action</h2>
+  <p>
+    To address this, I built a Python-based web scraper targeting <a href="https://www.autoscout24.com/">AutoScout24</a>, one of the largest online marketplaces
+    for used cars in Europe. The script collects structured data including:
+  </p>
+  <ul>
+    <li>Make, model, fuel type, transmission</li>
+    <li>First registration, mileage, and price</li>
+    <li>Geo-location (country, city, ZIP)</li>
+    <li>Scraping timestamp</li>
+  </ul>
+
+  <p>
+    It loops through listings from <strong>🇧🇪 Belgium</strong>, <strong>🇳🇱 Netherlands</strong>, <strong>🇩🇪 Germany</strong>, <strong>🇫🇷 France</strong>, and <strong>🇮🇹 Italy</strong> — collecting up to 50 pages per country, and appends new results to a local CSV file (<code>used_car_prices.csv</code>), maintaining a historical data trail.
+  </p>
+
+  <h2>Result</h2>
+  <p>
+    This tool enables continuous monitoring of B2C pricing trends. By aligning them with B2B auction price data, we can:
+  </p>
+  <ul>
+    <li>Identify pricing deltas between market segments</li>
+    <li>Detect seasonal or geographic trends</li>
+    <li>Support pricing strategy, inventory decisions, and market forecasting</li>
+  </ul>
+
+  <p>
+    ✅ Built with <code>requests</code>, <code>BeautifulSoup</code>, and <code>pandas</code><br>
+    ✅ Ready for scheduled automation via task schedulers (e.g. Windows Task Scheduler or cron)
+  </p>
+
+  <h2>📁 Sample Output Columns</h2>
+  <table>
+    <tr>
+      <th>make</th>
+      <th>model</th>
+      <th>price</th>
+      <th>mileage</th>
+      <th>first_registration</th>
+      <th>fuel_type</th>
+      <th>country</th>
+      <th>city</th>
+      <th>date</th>
+    </tr>
+  </table>
+
+  <a href="/" class="back-link">← Back to Portfolio</a>
 </body>
 </html>
