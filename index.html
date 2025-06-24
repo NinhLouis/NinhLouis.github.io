@@ -3,55 +3,81 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title> Ninh Louis | Portfolio</title>
+  <title>Ninh's Notes | Portfolio</title>
   <style>
     body {
-      font-family: Arial, sans-serif;
+      font-family: 'Segoe UI', Tahoma, sans-serif;
       margin: 0;
       padding: 0;
-      background: #f4f4f4;
+      background: #f9fbfc;
+      color: #333;
     }
     header {
-      background: #222;
-      color: white;
-      padding: 20px;
-      text-align: center;
+      display: flex;
+      align-items: center;
+      background: #e0f2f1;
+      padding: 15px 30px;
+      border-bottom: 1px solid #ccc;
     }
     header img {
       border-radius: 50%;
-      width: 100px;
-      height: 100px;
-      margin-bottom: 10px;
+      width: 70px;
+      height: 70px;
+      margin-right: 20px;
     }
+    header .title-group h1 {
+      margin: 0;
+      font-size: 1.8em;
+      color: #00695c;
+    }
+    header .title-group p {
+      margin: 4px 0 0;
+      color: #00796b;
+      font-weight: 500;
+    }
+
     nav {
       display: flex;
       justify-content: center;
-      background: #333;
+      background: #b2dfdb;
     }
     nav button {
-      padding: 10px 20px;
+      padding: 12px 25px;
       border: none;
-      background: #333;
-      color: white;
+      background: transparent;
       font-size: 16px;
       cursor: pointer;
+      color: #004d40;
+      font-weight: 600;
     }
-    nav button:hover, nav button.active {
-      background: #555;
+    nav button:hover,
+    nav button.active {
+      background: #80cbc4;
+      border-radius: 5px 5px 0 0;
     }
+
     section {
-      max-width: 800px;
+      max-width: 900px;
       margin: 30px auto;
       background: white;
-      padding: 20px;
-      border-radius: 6px;
+      padding: 30px;
+      border-radius: 8px;
       display: none;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.08);
     }
     section.active {
       display: block;
     }
+
+    .highlight-section {
+      background: #e3f2fd;
+      padding: 20px;
+      margin-top: 30px;
+      border-radius: 6px;
+    }
+
     a {
-      color: #007acc;
+      color: #00695c;
       text-decoration: none;
     }
     a:hover {
@@ -60,13 +86,18 @@
     ul {
       padding-left: 20px;
     }
+    ul li {
+      margin-bottom: 8px;
+    }
   </style>
 </head>
 <body>
   <header>
     <img src="https://github.com/NinhLouis.png" alt="Ninh Louis Avatar" />
-    <h1>Ninh's Notes</h1>
-    <p> Insights for Effective Strategies </p>
+    <div class="title-group">
+      <h1>Ninh's Notes</h1>
+      <p>Insights for Effective Strategies</p>
+    </div>
   </header>
 
   <nav>
@@ -75,47 +106,58 @@
   </nav>
 
   <section id="profile" class="active">
-    <h2>Me</h2>
+    <h2>About Me</h2>
     <p>
       Hi, I’m Ninh — a data scientist who bridges data science and business strategy. I provide insights and recommendations to formulate effective strategies, focusing on market segmentation, customer profitability, customer lifetime value, business performance and forecast, customer research.
     </p>
     <p>
       For my full background and latest work, view my 
       <a href="https://www.linkedin.com/in/vuninh/" target="_blank">LinkedIn profile</a>.
-  </p> 
+    </p> 
 
-    <h3>What drives me</h3>
+    <h3>What Drives Me</h3>
     <ul>
       <li>Transform data into business intuition</li>
       <li>Align the business with what customers want and need</li>
-      <li>Forcast and predict the trends</li>
+      <li>Forecast and predict the trends</li>
       <li>Build tools that help others make better decisions</li>
     </ul>
     
-    <h3>Experience highlights</h3>
-  <ul>
-    <li>Openlane Europe – Delivered €60K in cost savings via in-house large sample customer research; boosted new customer conversion by 12% YoY</li>
-    <li>Automated customer profitability and CLV segmentation to guide marketing and retention efforts</li>
-    <li>Built custom marketing mix models (MMM) with Robyn (by META) and Meridian (by Google) to measure ad effectiveness and optimize spend</li>
-    <li>Led Power BI dashboards and machine learning analysis for sales and customer behavior</li>
-    <li>Prior 5 years of experiences in digital marketing in Vietnam and Philippines </li>
-  </ul>
+    <h3>Experience Highlights</h3>
+    <ul>
+      <li>Openlane Europe – Delivered €60K in cost savings via in-house large sample customer research; boosted new customer conversion by 12% YoY</li>
+      <li>Automated customer profitability and CLV segmentation to guide marketing and retention efforts</li>
+      <li>Built custom marketing mix models (MMM) with Robyn (by META) and Meridian (by Google) to measure ad effectiveness and optimize spend</li>
+      <li>Led Power BI dashboards and machine learning analysis for sales and customer behavior</li>
+      <li>Prior 5 years of experience in digital marketing in Vietnam and the Philippines</li>
+    </ul>
 
-  <h3>Core competencies</h3>
-  <ul>
-    <li><strong>Analytics:</strong> Statistics, machine learning, time series, customer segmentation, marketing mix modeling, customer lifetime value</li>
-    <li><strong>Tools:</strong> Python (pandas, scikit-learn, pytorch - learning), SQL, Power BI (DAX, Power Query), Google Analytics</li>
-    <li><strong>CRM & Martech:</strong> Salesforce Sales & Marketing Cloud, digital campaign data, advertising ROI tracking</li>
+    <h3>Core Competencies</h3>
+    <ul>
+      <li><strong>Analytics:</strong> Statistics, machine learning, time series, customer segmentation, marketing mix modeling, customer lifetime value</li>
+      <li><strong>Tools:</strong> Python (pandas, scikit-learn, pytorch - learning), SQL, Power BI (DAX, Power Query), Google Analytics</li>
+      <li><strong>CRM & Martech:</strong> Salesforce Sales & Marketing Cloud, digital campaign data, advertising ROI tracking</li>
+    </ul>
 
-  </ul>
-</section>
-
+    <div class="highlight-section">
+      <h3>✨ Latest Projects</h3>
+      <ul>
+        <li>
+          <a href="projects/used-car-scraper/">🚗 European Used Car Price Scraper</a><br />
+          Extracts B2C car prices across Europe to explain B2B pricing trends. Involves Python scraping, JSON parsing, and time-based analysis.
+        </li>
+        <li>
+          <a href="projects/another-project/">📊 Auction Pricing Strategy (Coming Soon)</a><br />
+          Combines auction log data with external pricing signals to detect patterns and optimize inventory decision-making.
+        </li>
+      </ul>
+    </div>
   </section>
 
   <section id="projects">
     <h2>My Projects</h2>
     <p>
-      Some big or small projects to remember in my data path
+      Some big or small projects to remember in my data path:
     </p>
     <ul>
       <li>
