@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>European Used Car Price Scraper</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      background: #ffffff;
+      color: #333;
+    }
+
+    header {
+      text-align: center;
+      padding: 30px 20px 10px;
+      background: white;
+      border-bottom: 1px solid #ddd;
+    }
+
+    header img {
+      border-radius: 50%;
+      width: 80px;
+      height: 80px;
+      margin-bottom: 10px;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 1.8em;
+      color: #1a1a1a;
+    }
+
+    header p {
+      margin: 5px 0 0;
+      font-size: 1.05em;
+      color: #555;
+    }
+
+    nav {
+  display: flex;
+  justify-content: center;
+  background: #ffffff;
+  border-top: 1px solid #ddd;
+  border-bottom: 1px solid #ddd;
+}
+
+nav a.nav-link {
+  padding: 12px 25px;
+  font-size: 16px;
+  font-weight: 600;
+  color: #333;
+  text-decoration: none;
+}
+
+nav a.nav-link:hover {
+  background: #e6f2fa;
+  color: #007acc;
+}
+
+    nav button {
+      padding: 12px 25px;
+      border: none;
+      background: transparent;
+      font-size: 16px;
+      cursor: default;
+      font-weight: 600;
+      color: #aaa;
+    }
+
+    main {
+      max-width: 900px;
+      margin: 30px auto;
+      padding: 30px;
+    }
+
+    h1, h2 {
+      color: #333;
+    }
+
+    code, pre {
+      background: #f4f4f4;
+      padding: 6px;
+      border-radius: 4px;
+      display: block;
+      white-space: pre-wrap;
+    }
+
+    .back-link {
+      margin-top: 2em;
+      display: inline-block;
+    }
+
+    table {
+      border-collapse: collapse;
+      width: 100%;
+      margin-top: 1em;
+    }
+
+    table, th, td {
+      border: 1px solid #ccc;
+      padding: 8px;
+    }
+
+    th {
+      background-color: #eee;
+    }
+
+    a {
+      color: #007acc;
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <img src="https://github.com/NinhLouis.png" alt="Ninh Louis Avatar" />
+    <h1>Ninh's Notes</h1>
+    <p>Insights for Effective Strategies</p>
+  </header>
+
+<nav>
+  <a href="/index.html#profile" class="nav-link">🧑‍💼 Me</a>
+  <a href="/index.html#projects" class="nav-link">🛠️ Projects</a>
+</nav>
+
+
+<main>
+    <h1>📊 Customer Lifetime Value Prediction Model</h1>
+
+    <h2>Context & Problem</h2>
+    <p>
+      In our B2B marketplace, customers have no contractual obligation to stay — they buy when they want, and stop without notice. 
+      This presented a challenge: how can we estimate the sales potential of each existing buyer if their future behavior is unknown?
+    </p>
+    <p>
+      We framed this business question as: <em>“What is the expected customer lifetime value (CLV) of each buyer in the next 1, 3, and 6 months?”</em> 
+      This would let us forecast future revenue, detect potential churn, and personalize interventions.
+    </p>
+
+    <h2>Solution & Methodology</h2>
+    <p>
+      Inspired by <strong>Fader et al. (2005)</strong> and <strong>Fader & Hardie (2013)</strong>, we implemented a non-contractual CLV framework using:
+    </p>
+    <ul>
+      <li><strong>BG/NBD Model</strong> – to model purchase frequency and dropout probability</li>
+      <li><strong>Gamma-Gamma Model</strong> – to estimate expected transaction value</li>
+    </ul>
+
+<img src="frequency_recency_diagram.png" alt="BG/NBD purchase timeline" style="width:100%; max-width:700px; display:block; margin: 20px auto;" />
+<p style="text-align: center; font-style: italic; color: #555;">
+The BG/NBD model uses frequency (x), recency (tx), and total time observed (T) to estimate repeat purchasing and churn probability.
+</p>
+
+    <p>
+      Using transaction logs from our data warehouse, we trained and validated the model weekly with <strong>lifetimes</strong>strong> Python library, using a 
+      root mean squared error (RMSE) threshold of 5% to ensure acceptable predictive accuracy.
+    </p>
+
+    <h2>Results & Business Value</h2>
+    <ul>
+      <li>Weekly CLV calculation for 1, 3, and 6-month horizons</li>
+      <li>Predicted probability of churn for each customer</li>
+      <li>Customer segmentation based on future value</li>
+      <li>Triggering Salesforce cases for at-risk customers</li>
+      <li>More timely, personalized retention and loyalty campaigns</li>
+    </ul>
+
+    <h2>📂 Files and Scripts</h2>
+    <br> View them on GitHub:<br>
+      <a href="https://github.com/NinhLouis/NinhLouis.github.io/tree/main/projects/clv-model" target="_blank">
+        🔗 View CLV project on GitHub
+      </a>
+    </p>
+
+
+    <a href="/index.html#projects" class="back-link">← Back to All Projects</a>
+  </main>
+</body>
+</html>
