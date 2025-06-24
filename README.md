@@ -4,7 +4,7 @@
 As a data analyst working with **B2B used car transaction data**, I realized we lacked visibility into the **B2C side of the market**. Understanding consumer-facing price trends across European countries could bridge that gap — and help explain price dynamics in wholesale auctions.
 
 ### Solution & Action  
-To address this, I built a Python-based web scraper targeting [AutoScout24](https://www.autoscout24.com/), one of the largest online marketplaces for used cars in Europe. The script collects structured data including:
+To address this, I built a Python-based web scraper targeting [AutoScout24], one of the largest online marketplaces for used cars in Europe. The script collects structured data including:
 - Make, model, fuel type, transmission
 - First registration, mileage, and price
 - Geo-location (country, city, ZIP)
