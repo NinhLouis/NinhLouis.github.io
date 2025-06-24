@@ -280,13 +280,12 @@ nav a.linkedin-tab:hover {
   document.getElementById(tabId).classList.add("active");
 
   const navButtons = document.querySelectorAll("nav button");
-  if (tabId === "projects") {
-    navButtons[1].classList.add("active");
-  } else if (tabId === "cv") {
-    navButtons[2].classList.add("active");
-  } else {
-    navButtons[0].classList.add("active");
-  }
+  if (tabId === "profile") {
+  navButtons[0].classList.add("active");
+} else if (tabId === "cv") {
+  navButtons[1].classList.add("active");
+} else if (tabId === "projects") {
+  navButtons[2].classList.add("active");
 }
 
 
