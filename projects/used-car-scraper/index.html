@@ -6,103 +6,181 @@
   <style>
     body {
       font-family: Arial, sans-serif;
-      line-height: 1.6;
-      max-width: 900px;
-      margin: auto;
-      padding: 40px;
+      margin: 0;
+      background: #ffffff;
+      color: #333;
     }
+
+    header {
+      text-align: center;
+      padding: 30px 20px 10px;
+      background: white;
+      border-bottom: 1px solid #ddd;
+    }
+
+    header img {
+      border-radius: 50%;
+      width: 80px;
+      height: 80px;
+      margin-bottom: 10px;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 1.8em;
+      color: #1a1a1a;
+    }
+
+    header p {
+      margin: 5px 0 0;
+      font-size: 1.05em;
+      color: #555;
+    }
+
+    nav {
+      display: flex;
+      justify-content: center;
+      background: #ffffff;
+      border-top: 1px solid #ddd;
+      border-bottom: 1px solid #ddd;
+    }
+
+    nav button {
+      padding: 12px 25px;
+      border: none;
+      background: transparent;
+      font-size: 16px;
+      cursor: default;
+      font-weight: 600;
+      color: #aaa;
+    }
+
+    main {
+      max-width: 900px;
+      margin: 30px auto;
+      padding: 30px;
+    }
+
     h1, h2 {
       color: #333;
     }
-    code {
+
+    code, pre {
       background: #f4f4f4;
-      padding: 2px 6px;
+      padding: 6px;
       border-radius: 4px;
-      font-family: monospace;
+      display: block;
+      white-space: pre-wrap;
     }
+
     .back-link {
       margin-top: 2em;
       display: inline-block;
     }
+
     table {
       border-collapse: collapse;
       width: 100%;
       margin-top: 1em;
     }
+
     table, th, td {
       border: 1px solid #ccc;
       padding: 8px;
     }
+
     th {
       background-color: #eee;
+    }
+
+    a {
+      color: #007acc;
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
     }
   </style>
 </head>
 <body>
-  <h1>🚗 European Used Car Price Scraper</h1>
 
-  <h2>Context & Problem</h2>
-  <p>
-    As a data analyst working with <strong>B2B used car transaction data</strong>, I realized we lacked visibility into the <strong>B2C side of the market</strong>.
-    Understanding consumer-facing price trends across European countries could bridge that gap — and help explain price dynamics in wholesale auctions.
-  </p>
+  <header>
+    <img src="https://github.com/NinhLouis.png" alt="Ninh Louis Avatar" />
+    <h1>Ninh's Notes</h1>
+    <p>Insights for Effective Strategies</p>
+  </header>
 
-  <h2>Solution & Action</h2>
-  <p>
-    To address this, I built a Python-based web scraper targeting <a href="https://www.autoscout24.com/">AutoScout24</a>, one of the largest online marketplaces
-    for used cars in Europe. The script collects structured data including:
-  </p>
-  <ul>
-    <li>Make, model, fuel type, transmission</li>
-    <li>First registration, mileage, and price</li>
-    <li>Geo-location (country, city, ZIP)</li>
-    <li>Scraping timestamp</li>
-  </ul>
+  <nav>
+    <button>🧑‍💼 Me</button>
+    <button>🛠️ Projects</button>
+  </nav>
 
-  <p>
-    It loops through listings from <strong>🇧🇪 Belgium</strong>, <strong>🇳🇱 Netherlands</strong>, <strong>🇩🇪 Germany</strong>, <strong>🇫🇷 France</strong>, and <strong>🇮🇹 Italy</strong> — collecting up to 50 pages per country, and appends new results to a local CSV file (<code>used_car_prices.csv</code>), maintaining a historical data trail.
-  </p>
+  <main>
+    <h1>🚗 European Used Car Price Scraper</h1>
 
-  <h2>Result</h2>
-  <p>
-    This tool enables continuous monitoring of B2C pricing trends. By aligning them with B2B auction price data, we can:
-  </p>
-  <ul>
-    <li>Identify pricing deltas between market segments</li>
-    <li>Detect seasonal or geographic trends</li>
-    <li>Support pricing strategy, inventory decisions, and market forecasting</li>
-  </ul>
+    <h2>Context & Problem</h2>
+    <p>
+      As a data analyst working with <strong>B2B used car transaction data</strong>, I realized we lacked visibility into the <strong>B2C side of the market</strong>.
+      Understanding consumer-facing price trends across European countries could bridge that gap — and help explain price dynamics in wholesale auctions.
+    </p>
 
-  <p>
-    ✅ Built with <code>requests</code>, <code>BeautifulSoup</code>, and <code>pandas</code><br>
-    ✅ Ready for scheduled automation via task schedulers (e.g. Windows Task Scheduler or cron)
-  </p>
+    <h2>Solution & Action</h2>
+    <p>
+      To address this, I built a Python-based web scraper targeting <a href="https://www.autoscout24.com/">AutoScout24</a>, one of the largest online marketplaces
+      for used cars in Europe. The script collects structured data including:
+    </p>
+    <ul>
+      <li>Make, model, fuel type, transmission</li>
+      <li>First registration, mileage, and price</li>
+      <li>Geo-location (country, city, ZIP)</li>
+      <li>Scraping timestamp</li>
+    </ul>
 
-  <h2>📁 Sample Output Columns</h2>
-  <table>
-    <tr>
-      <th>make</th>
-      <th>model</th>
-      <th>price</th>
-      <th>mileage</th>
-      <th>first_registration</th>
-      <th>fuel_type</th>
-      <th>country</th>
-      <th>city</th>
-      <th>date</th>
-    </tr>
-  </table>
-  <h2>📂 View on GitHub</h2>
-<p>
-  View the Python script on GitHub:  
-  <a href="https://github.com/NinhLouis/NinhLouis.github.io/blob/main/projects/used-car-scraper/used_car_price.py" target="_blank">
-    🔗 used_car_price.py on GitHub
-  </a>
-</p>
+    <p>
+      It loops through listings from <strong>🇧🇪 Belgium</strong>, <strong>🇳🇱 Netherlands</strong>, <strong>🇩🇪 Germany</strong>, <strong>🇫🇷 France</strong>, and <strong>🇮🇹 Italy</strong> — collecting up to 50 pages per country, and appends new results to a local CSV file (<code>used_car_prices.csv</code>), maintaining a historical data trail.
+    </p>
 
-  <h2>🧩 Code Snippet</h2>
-<pre><code>
-import requests
+    <h2>Result</h2>
+    <p>
+      This tool enables continuous monitoring of B2C pricing trends. By aligning them with B2B auction price data, we can:
+    </p>
+    <ul>
+      <li>Identify pricing deltas between market segments</li>
+      <li>Detect seasonal or geographic trends</li>
+      <li>Support pricing strategy, inventory decisions, and market forecasting</li>
+    </ul>
+
+    <p>
+      ✅ Built with <code>requests</code>, <code>BeautifulSoup</code>, and <code>pandas</code><br>
+      ✅ Ready for scheduled automation via task schedulers (e.g. Windows Task Scheduler or cron)
+    </p>
+
+    <h2>📁 Sample Output Columns</h2>
+    <table>
+      <tr>
+        <th>make</th>
+        <th>model</th>
+        <th>price</th>
+        <th>mileage</th>
+        <th>first_registration</th>
+        <th>fuel_type</th>
+        <th>country</th>
+        <th>city</th>
+        <th>date</th>
+      </tr>
+    </table>
+
+    <h2>📂 View on GitHub</h2>
+    <p>
+      View the Python script on GitHub:  
+      <a href="https://github.com/NinhLouis/NinhLouis.github.io/blob/main/projects/used-car-scraper/used_car_price.py" target="_blank">
+        🔗 used_car_price.py on GitHub
+      </a>
+    </p>
+
+    <h2>🧩 Code Snippet</h2>
+    <pre><code>import requests
 from bs4 import BeautifulSoup
 import json
 import pandas as pd
@@ -111,110 +189,12 @@ import os
 
 # Function to scrape data
 def scrape_data():
-    # List of country codes
     country_codes = ['be', 'nl', 'de', 'fr', 'it']
-    
-    # Initialize an empty list to store car information
-    cars_info = []
-    
-    # Create a session object
-    session = requests.Session()
-    
-    # Current date
-    current_date = datetime.now().strftime('%Y-%m-%d')
-    
-    # Loop through each country code
-    for country_code in country_codes:
-        # Loop through the first 50 pages for each country
-        for page in range(1, 51):
-            # Define the URL
-            # Include '/nl/' in the URL path only if the country code is 'be'
-            url_path = '/nl' if country_code == 'be' else ''
-            products_list_url = f'https://www.autoscout24.{country_code}{url_path}/lst?atype=C&page={page}'
-            prod_url = f'https://www.autoscout24.{country_code}'
+    # ... etc.
+    </code></pre>
 
-            
-            # Send a GET request to the products list URL
-            response = session.get(products_list_url)
-            soup = BeautifulSoup(response.text, 'html.parser')
-            
-            # Find the script tag with the JSON data
-            script_tag = soup.find('div', class_='main-app').find('script', type='application/json')
-            
-            # Parse the JSON data
-            data = json.loads(script_tag.contents[0])
-            
-            # Navigate to the listings
-            listings = data['props']['pageProps']['listings']
-            
-            # Extract car information for each listing
-            for listing in listings:
-                # Extract the required details
-                make = listing['vehicle']['make']
-                model = listing['vehicle']['model']
-                url = prod_url + listing['url']
-                price = listing['tracking']['price']
-                mileage = listing['tracking']['mileage']
-                first_registration = listing['tracking']['firstRegistration']
-                fuel_type = listing['tracking']['fuelType']
-                transmission = listing['vehicleDetails'][1]['data']  # Assuming the second dictionary contains the transmission
-                car_type = listing['vehicleDetails'][3]['data']  # Assuming the fourth dictionary contains the car type
-                country = listing['location']['countryCode']
-                zipcode = listing['location']['zip']
-                city = listing['location']['city']
-                
-                # Append the current date to the car information
-                listing['scraping_date'] = current_date
-                
-                # Append the car information to the list
-                cars_info.append({
-                 'make': make,
-                 'model': model,
-                 'url': url,
-                 'price': price,
-                 'mileage': mileage,
-                 'first_registration': first_registration,
-                 'fuel_type': fuel_type,
-                 'transmission': transmission,
-                 'car_type': car_type,
-                 'country': country,
-                 'zip_code': zipcode,
-                 'city': city,
-                 'date': current_date
-        })
-    
-    # Convert the list of car information to a DataFrame
-    new_data = pd.DataFrame(cars_info)
-    
-    # Read the existing data
-    try:
-        existing_data = pd.read_csv(r'C:\Users\ninh\used_car_prices.csv')
-        # Combine the new data with the existing data
-        updated_data = pd.concat([existing_data, new_data]).drop_duplicates()
-    except FileNotFoundError:
-        # If the file does not exist, use the new data as the updated data
-        updated_data = new_data
+    <a href="/index.html#projects" class="back-link">← Back to Portfolio</a>
+  </main>
 
-    try:
-        existing_data = pd.read_csv(r'C:\Users\ninh\used_car_prices.csv')
-        # Combine the new data with the existing data
-        updated_data = pd.concat([existing_data, new_data]).drop_duplicates()
-    except FileNotFoundError:
-        # If the file does not exist, use the new data as the updated data
-        updated_data = new_data
-    
-    # Save the updated data to a CSV file
-    csv_file_path = r'C:\Users\ninh\used_car_prices.csv'
-    updated_data.to_csv(csv_file_path, index=False)
-    
-    # Create a running log file
-    log_file_path = os.path.join(os.path.dirname(csv_file_path), 'running_log.txt')
-    with open(log_file_path, 'w') as log_file:
-        log_file.write('Script ran successfully on ' + current_date)
-</code></pre>
-
-
-
-  <a href="/" class="back-link">← Back to Portfolio</a>
 </body>
 </html>
