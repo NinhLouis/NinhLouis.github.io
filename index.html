@@ -276,32 +276,32 @@ nav a.linkedin-tab:hover {
 
 <script>
   function showTab(tabId) {
-  document.querySelectorAll("nav button").forEach(btn => btn.classList.remove("active"));
-  document.querySelectorAll("section").forEach(sec => sec.classList.remove("active"));
-  document.getElementById(tabId).classList.add("active");
+    document.querySelectorAll("nav button").forEach(btn => btn.classList.remove("active"));
+    document.querySelectorAll("section").forEach(sec => sec.classList.remove("active"));
+    document.getElementById(tabId).classList.add("active");
 
-  const navButtons = document.querySelectorAll("nav button");
-  if (tabId === "profile") {
-  navButtons[0].classList.add("active");
-} else if (tabId === "cv") {
-  navButtons[1].classList.add("active");
-} else if (tabId === "projects") {
-  navButtons[2].classList.add("active");
-}
+    const navButtons = document.querySelectorAll("nav button");
+    if (tabId === "profile") {
+      navButtons[0].classList.add("active");
+    } else if (tabId === "cv") {
+      navButtons[1].classList.add("active");
+    } else if (tabId === "projects") {
+      navButtons[2].classList.add("active");
+    }
+  }
 
-
-  // Detect hash and activate tab on page load
+  // ✅ This must be outside the showTab function
   document.addEventListener("DOMContentLoaded", function () {
     const hash = window.location.hash;
-if (hash === "#projects") {
-  showTab("projects");
-} else if (hash === "#cv") {
-  showTab("cv");
-} else {
-  showTab("profile");
-}
+    if (hash === "#projects") {
+      showTab("projects");
+    } else if (hash === "#cv") {
+      showTab("cv");
+    } else {
+      showTab("profile");
+    }
 
-    // Clone latest 2 projects
+    // Clone latest 2 projects into "Me" tab
     const allProjects = document.querySelectorAll("#project-list li");
     const latestList = document.getElementById("latest-projects");
     if (latestList && allProjects.length > 0) {
