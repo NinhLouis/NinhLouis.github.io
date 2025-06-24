@@ -38,12 +38,25 @@
     }
 
     nav {
-      display: flex;
-      justify-content: center;
-      background: #ffffff;
-      border-top: 1px solid #ddd;
-      border-bottom: 1px solid #ddd;
-    }
+  display: flex;
+  justify-content: center;
+  background: #ffffff;
+  border-top: 1px solid #ddd;
+  border-bottom: 1px solid #ddd;
+}
+
+nav a.nav-link {
+  padding: 12px 25px;
+  font-size: 16px;
+  font-weight: 600;
+  color: #333;
+  text-decoration: none;
+}
+
+nav a.nav-link:hover {
+  background: #e6f2fa;
+  color: #007acc;
+}
 
     nav button {
       padding: 12px 25px;
@@ -111,10 +124,11 @@
     <p>Insights for Effective Strategies</p>
   </header>
 
-  <nav>
-    <button>🧑‍💼 Me</button>
-    <button>🛠️ Projects</button>
-  </nav>
+<nav>
+  <a href="/index.html#profile" class="nav-link">🧑‍💼 Me</a>
+  <a href="/index.html#projects" class="nav-link">🛠️ Projects</a>
+</nav>
+
 
   <main>
     <h1>🚗 European Used Car Price Scraper</h1>
