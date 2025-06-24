@@ -132,6 +132,7 @@ nav a.linkedin-tab:hover {
 
 <nav>
   <button onclick="showTab('profile')" class="active">🧠 Me</button>
+  <button onclick="showTab('cv')">📄 CV</button>
   <button onclick="showTab('projects')">🛠️ Projects</button>
   <a href="https://www.linkedin.com/in/vuninh/" target="_blank" class="linkedin-tab">💼 LinkedIn</a>
 </nav>
@@ -176,6 +177,84 @@ nav a.linkedin-tab:hover {
       </ul>
     </div>
   </section>
+  
+
+  <section id="cv">
+  <h2>📄 Curriculum Vitae</h2>
+
+  <p><strong>Ninh Van Vu</strong><br>
+  Leuven 3001, Belgium<br>
+  <a href="mailto:vuninh@live.com">vuninh@live.com</a> · +32 4 92 11 62 50 · <a href="https://www.linkedin.com/in/vuninh/" target="_blank">LinkedIn</a></p>
+
+  <h3>Profile</h3>
+  <p>Data science and marketing professional with 8+ years of experience delivering strategic insights that drive growth and optimize costs. Specialized in customer-centric analysis using Python, SQL, Power BI, and machine learning.</p>
+
+  <h3>Key Skills</h3>
+  <ul>
+    <li><strong>Competences:</strong> Statistics · Machine Learning · CLV · MMM · Marketing Analytics · ROI Optimization · Research · Data Storytelling</li>
+    <li><strong>Tools:</strong> SQL Server · Python (pandas, scikit-learn, PyTorch) · Power BI · Google Analytics · Salesforce Sales & Marketing Cloud</li>
+  </ul>
+
+  <h3>Work Experience</h3>
+
+  <p><strong>Marketing Analyst</strong><br>
+  <em>OPENLANE Europe, Tienen, Belgium (May 2022 – Present)</em></p>
+  <ul>
+    <li>Delivered €60,000 in research savings by conducting annual customer survey internally with 30% faster delivery.</li>
+    <li>Built CLV prediction model using BG/NBD + Gamma-Gamma to monitor sales potential and customer churn weekly.</li>
+    <li>Segmented customers by profitability and churn probability to drive targeted sales strategies.</li>
+    <li>Developed a custom MMM to optimize ad effectiveness and cost allocation using Meta Robyn & Google Meridian.</li>
+    <li>Created automated profitability model using SAP data and built interactive dashboards in Power BI (DAX + SQL).</li>
+    <li>Supported customer success and marketing directors with insight reports that influenced 25% YoY growth and 12% conversion increase.</li>
+    <li>Led competitor research, sales performance KPIs, segmentation, and forecasts at rep/team level.</li>
+  </ul>
+
+  <p><strong>Data Scientist – Power BI (External Consultant)</strong><br>
+  <em>WHISE Europe, Brussels, Belgium (Apr 2022 – Jun 2022)</em></p>
+  <ul>
+    <li>Defined KPIs and analytic questions with ICT and marketing teams.</li>
+    <li>Built and delivered Power BI dashboards with clear documentation and strategic insights.</li>
+  </ul>
+
+  <p><strong>Business Reporting & Marketing (Intern)</strong><br>
+  <em>UPS Supply Chain Solutions, Brussels (Sep 2019 – Dec 2019)</em></p>
+  <ul>
+    <li>Presented KPI and logistics innovation insights to VP and EU leadership.</li>
+    <li>Redefined customer segmentation based on revenue, costs, and gross profit.</li>
+    <li>Developed pricing model across five EU markets using statistical modeling.</li>
+  </ul>
+
+  <p><strong>Senior Marketing Executive</strong><br>
+  <em>Gamma Interactive, Makati, Philippines (Jan 2016 – Jul 2018)</em></p>
+  <ul>
+    <li>Led user acquisition via media buying, web analytics, and segmentation.</li>
+    <li>Achieved 215% growth in new accounts and 144% drop in CPA over 2 years.</li>
+  </ul>
+
+  <p><strong>Marketing Executive</strong><br>
+  <em>NatureForex Ltd., Hanoi, Vietnam (Apr 2015 – Jan 2016)</em></p>
+  <ul>
+    <li>Redesigned segmentation, digital plans, and agency strategy for FX investment product.</li>
+  </ul>
+
+  <p><strong>Marketing Executive</strong><br>
+  <em>Avantice Corporation, Makati, Philippines (Oct 2013 – Mar 2015)</em></p>
+  <ul>
+    <li>Managed campaign performance and media agencies to drive digital sales and engagement.</li>
+    <li>Launched new social media strategy to improve brand interaction.</li>
+  </ul>
+
+  <h3>Education</h3>
+  <ul>
+    <li><strong>KU Leuven</strong> – MSc Statistics & Data Science (2022, Cum Laude, 74.9%)</li>
+    <li><strong>Vrije Universiteit Brussel</strong> – MSc International Business (2020, Cum Laude, 74%)</li>
+    <li><strong>National Economics University (Vietnam)</strong> – BSc Marketing (2013, 77.8%)</li>
+  </ul>
+
+  <h3>Languages</h3>
+  <p>English (C1) · Dutch (B1, in training) · Vietnamese (native)</p>
+</section>
+
 
   <section id="projects">
     <h2>My Projects</h2>
@@ -196,26 +275,31 @@ nav a.linkedin-tab:hover {
 
 <script>
   function showTab(tabId) {
-    document.querySelectorAll("nav button").forEach(btn => btn.classList.remove("active"));
-    document.querySelectorAll("section").forEach(sec => sec.classList.remove("active"));
-    document.getElementById(tabId).classList.add("active");
+  document.querySelectorAll("nav button").forEach(btn => btn.classList.remove("active"));
+  document.querySelectorAll("section").forEach(sec => sec.classList.remove("active"));
+  document.getElementById(tabId).classList.add("active");
 
-    const navButtons = document.querySelectorAll("nav button");
-    if (tabId === "projects") {
-      navButtons[1].classList.add("active");
-    } else {
-      navButtons[0].classList.add("active");
-    }
+  const navButtons = document.querySelectorAll("nav button");
+  if (tabId === "projects") {
+    navButtons[1].classList.add("active");
+  } else if (tabId === "cv") {
+    navButtons[2].classList.add("active");
+  } else {
+    navButtons[0].classList.add("active");
   }
+}
+
 
   // Detect hash and activate tab on page load
   document.addEventListener("DOMContentLoaded", function () {
     const hash = window.location.hash;
-    if (hash === "#projects") {
-      showTab("projects");
-    } else {
-      showTab("profile"); // default tab
-    }
+if (hash === "#projects") {
+  showTab("projects");
+} else if (hash === "#cv") {
+  showTab("cv");
+} else {
+  showTab("profile");
+}
 
     // Clone latest 2 projects
     const allProjects = document.querySelectorAll("#project-list li");
