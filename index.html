@@ -63,6 +63,26 @@
       color: #007acc;
       border-bottom: 3px solid #007acc;
     }
+    nav a.linkedin-tab {
+  padding: 12px 25px;
+  font-size: 16px;
+  font-weight: 600;
+  color: #333;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  background: transparent;
+  border: none;
+  transition: background 0.2s, color 0.2s;
+  margin-left: 10px;
+}
+
+nav a.linkedin-tab:hover {
+  background: #e6f2fa;
+  color: #007acc;
+  border-bottom: 3px solid #007acc;
+}
+
 
     section {
       max-width: 900px;
@@ -110,10 +130,11 @@
     <p>Insights for Effective Strategies</p>
   </header>
 
-  <nav>
-    <button onclick="showTab('profile')" class="active">🧑‍💼 Me</button>
-    <button onclick="showTab('projects')">🛠️ Projects</button>
-  </nav>
+<nav>
+  <button onclick="showTab('profile')" class="active">🧑‍💼 Me</button>
+  <button onclick="showTab('projects')">🛠️ Projects</button>
+  <a href="https://www.linkedin.com/in/vuninh/" target="_blank" class="linkedin-tab">🔗 LinkedIn</a>
+</nav>
 
   <section id="profile" class="active">
     <h2>About Me</h2>
